@@ -14,27 +14,20 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 != 0)
-		{
+		if (i % 3 == 0 && !(i % 5 == 0))
 			printf("FIZZ");
-		}
-		else if (i % 5 == 0 && i % 3 != 0)
-		{
+		else if (i % 5 == 0 && !(i % 3 == 0))
 			printf("BUZZ");
-		}
 		else if (i % 3 == 0 && i % 5 == 0)
-		{
 			printf("FIZZBUZZ");
-		}
-		else if (i == 1)
-		{
-			printf("%d", i);
-		}
 		else
-		{
-			printf(" %d", i);
-		}
+			printf("%d", i);
+
+		if (i != 100)
+			printf(" ");
+		else
+			printf("\n");
 	}
-	printf("\n");
+
 	return (0);
 }
